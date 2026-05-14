@@ -1,4 +1,4 @@
-from src import agent
+from src.app.agent import run
 import os
 
 if __name__ == "__main__":
@@ -11,6 +11,6 @@ if __name__ == "__main__":
         if question == "sair":
             break
 
-        result = agent.run(question)
+        result = run(question)
         print(result)
 

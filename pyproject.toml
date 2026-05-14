@@ -1,5 +1,5 @@
 [project]
-name = "btcanalystagent"
+name = "FinancialAssetAnalyst"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -14,4 +14,15 @@ dependencies = [
     "yfinance>=0.2.0",
     "numpy>=1.24.0",
     "keyboard>=0.13.5",
+    "pytest>=9.0.3",
+    "markitdown>=0.0.2",
+    "ddgs>=9.14.2",
+]
+
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+testpaths = [
+    "src/test"
 ]

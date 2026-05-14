@@ -1,6 +1,6 @@
 from langchain_ollama import ChatOllama
 from langchain.agents import create_react_agent, AgentExecutor
-from src.tools import get_ticker_values, calculate_indicaters, calculate_indicators, search_ticket
+from src.app.tools import search_ticker, get_ticker_values, calculate_indicators, get_ticker_fundamentals, web_search, url_to_markdown, predict_price_movement
 from langchain_core.prompts import PromptTemplate
 from langchain.memory import ConversationBufferMemory
 
@@ -13,8 +13,8 @@ def get_agent():
     return _agent
 
 def create_agent():
-    llm = ChatOllama(model="qwen2.5:14b", temperature=0)
-    tools = [get_ticker_values, calculate_indicaters, calculate_indicators, search_ticket]
+    llm = ChatOllama(model="qwen2.5:7b", temperature=0)
+    tools = [search_ticker, get_ticker_values, calculate_indicators, get_ticker_fundamentals, web_search, url_to_markdown, predict_price_movement]
 
     prompt = PromptTemplate.from_template("""You are a financial analyst assistant. Answer the following questions as best you can using the available tools.
 
